@@ -1,6 +1,7 @@
 <nav>
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/posts/">Posts</a></li>
+        {% for navItem in navItems %}
+        <li><a href="{{navItem.url}}" {% if page.url == navItem.url %}aria-current="page"{% endif %}>{{navItem.label}}</a></li>
+        {% endfor %}
     </ul>
 </nav>

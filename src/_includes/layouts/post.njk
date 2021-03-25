@@ -1,6 +1,10 @@
 {% extends 'layouts/_base.njk' %}
+{% block title %}{{post.title}} - Larry Hudson{% endblock %}
+
 {% block content %}
 <h1>{{post.title}}</h1>
 <p><em>{{post.date|readableDate}}</em>
+<div class="cms-content">
 {{post.content|safe}}
+</div>
 {% endblock %}

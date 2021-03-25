@@ -21,6 +21,8 @@ module.exports = function(eleventyConfig) {
       }).toFormat('y-MM-dd');
     });
 
+    eleventyConfig.addPassthroughCopy("./src/css");
+
 
   
     return  {
