@@ -1,0 +1,6 @@
+<h1>Latest posts</h1>
+{% for post in wp.posts %}
+<h2><a href="/{{post.slug}}/">{{post.title}}</a></h2>
+<p>{{post.date | readableDate}}</p>
+{{post.excerpt|safe}}
+{% endfor %}

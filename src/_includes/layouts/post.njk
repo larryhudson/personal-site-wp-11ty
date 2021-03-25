@@ -1,0 +1,6 @@
+{% extends 'layouts/_base.njk' %}
+{% block content %}
+<h1>{{post.title}}</h1>
+<p><em>{{post.date|readableDate}}</em>
+{{post.content|safe}}
+{% endblock %}

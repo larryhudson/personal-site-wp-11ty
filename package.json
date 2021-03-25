@@ -1,0 +1,24 @@
+{
+  "name": "larryhudson-wp-11ty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "dev": "npx eleventy --serve",
+    "start": "npx eleventy --serve",
+    "clean": "rm -rf _site",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "luxon": "^1.26.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
