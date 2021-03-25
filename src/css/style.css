@@ -21,6 +21,30 @@ body {
     outline-offset: 4px;
 }
 
+/* Typography */
+h1, h2 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+
+h1, h2, h3 {
+    line-height: 1.5;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+main, footer {
+    margin-top: 2rem;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+
 /* Header */
 
 header h1 {
@@ -56,3 +80,14 @@ nav a[aria-current] {
     border: 1px solid transparent;
 }
 
+/* Footer */
+footer {
+    font-size: smaller;
+
+    margin-top: 2rem;
+}
+
+
+footer p {
+    margin-top: 0.5rem;
+}

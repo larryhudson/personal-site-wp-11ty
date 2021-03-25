@@ -12,13 +12,17 @@
     <header>
         <h1>Larry Hudson</h1>
         {% include 'partials/navigation.njk' %}
-        <hr />
     </header>
+    <hr />
     <main>
     {% block content %}
     {{content|safe}}
     {% endblock %}
     </main>
+    <hr />
+    <footer>
+    {% include 'partials/footer.njk' %}
+    </footer>
     </div>
 </body>
 </html>
