@@ -16,6 +16,17 @@ body {
     max-width: 48ch;
 }
 
+:focus {
+    outline: 2px dashed darkred;
+    outline-offset: 4px;
+}
+
+/* Header */
+
+header h1 {
+    margin : 0;
+}
+
 /* Navigation */
 
 nav ul {
@@ -32,15 +43,16 @@ nav ul > * + * {
 
 nav a {
     padding: 0.5rem 1rem;
-    background: darkred;
-    color: white;
     text-decoration: none;
-    border: 1px solid transparent;
-}
 
-nav a[aria-current] {
     background: white;
     border: 1px solid darkred;
     color: black;
+}
+
+nav a[aria-current] {
+    background: darkred;
+    color: white;
+    border: 1px solid transparent;
 }
 
