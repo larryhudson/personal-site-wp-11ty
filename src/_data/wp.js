@@ -16,11 +16,13 @@ async function getData() {
         homePage: nodeByUri(uri: "/") {
           ... on Page {
             content
+            title
           }
         }
         postsPage: nodeByUri(uri: "/posts/") {
           ... on Page {
             content
+            title
           }
         }
       }      

@@ -1,8 +1,6 @@
 ---
-layout: 'layouts/_base.njk'
+layout: 'layouts/posts-page.njk'
 permalink: '/posts/index.html'
 ---
-{% block content %}
 {{wp.postsPage.content|safe}}
 {% include 'partials/latestPosts.njk' %}
-{% endblock %}

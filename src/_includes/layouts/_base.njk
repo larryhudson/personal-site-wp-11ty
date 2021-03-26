@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Larry Hudson{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    <!--Twitter Card-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{site.twitter}}">
+    <meta name="twitter:creator" content="@{{site.twitter}}">
+    <meta name="twitter:url" content="{{site.baseURL}}{{page.url}}">
+
+    <!--Schema-->
+    <link rel="author" href="{{site.baseURL}}">
+    <link rel="publisher" href="{{site.baseURL}}">
+        
+    <!-- Facebook OpenGraph -->
+    <meta property="og:url" content="{{site.baseURL}}{{page.url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{site.title}}">
+    <meta property="og:locale" content="en_AU">
+    <meta property="article:author" content="{{site.baseURL}}">
+    
+    {%- block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    
+    <!--Schema-->
+    <meta itemprop="name" content="{{title}}">
+    <meta itemprop="description" content="{{ site.description }}">
+    
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{ site.description }}">
+    {%- endblock -%}
 </head>
 <body>
     <div class="container">

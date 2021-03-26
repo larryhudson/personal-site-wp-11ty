@@ -2,5 +2,5 @@
 {% for post in wp.posts %}
 <h3><a href="/{{post.slug}}/">{{post.title}}</a></h3>
 <p>{{post.date | readableDate}}</p>
-{{post.excerpt|safe}}
+{{post.excerpt|striptags|truncate(196)|safe}}
 {% endfor %}

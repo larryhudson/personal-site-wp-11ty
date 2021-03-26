@@ -1,4 +1,19 @@
 {% extends 'layouts/_base.njk' %}
+{% block seo %}
+    <!--Twitter Card-->
+    <meta name="twitter:title" content="{{post.title}}">
+    <meta name="twitter:description" content="{{ post.excerpt|striptags|truncate(196) }}">
+    
+    <!--Schema-->
+    <meta itemprop="name" content="{{post.title}}">
+    <meta itemprop="description" content="{{ post.excerpt|striptags|truncate(196) }}">
+    
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="{{post.title}}">
+    <meta property="og:description" content="{{ post.excerpt|striptags|truncate(196) }}">
+{% endblock %}
+
+
 {% block title %}{{post.title}} - Larry Hudson{% endblock %}
 
 {% block content %}
