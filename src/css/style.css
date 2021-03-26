@@ -12,7 +12,8 @@ body {
     padding: 2rem;
 }
 
-.cms-content {
+.cms-content p,
+.cms-content ul {
     max-width: 48ch;
 }
 
@@ -90,4 +91,39 @@ footer {
 
 footer p {
     margin-top: 0.5rem;
+}
+
+/* Code blocks */
+.cms-content pre {
+    max-width: 100%;
+    overflow: scroll;
+    border: 1px dashed black;
+    padding: 0.5rem;
+
+    font-size: smaller;
+}
+
+/* Latest posts */
+.post-blurbs {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.post-blurbs > * + * {
+    margin-top: 2rem;
+}
+
+
+.post-blurb > * + * {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.post-blurb .date {
+    font-size: smaller;
+}
+
+.post-blurb h3 {
+    margin: 0;
 }
