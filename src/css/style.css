@@ -11,14 +11,16 @@
     --color-accent: hsl(16.78,86.83%,52.35%);
     --color-muted: hsl(247.69,66.1%,88.43%);
 }
-
-body.light {
-    --color-background: hsl(0,91.3%,95.49%);
-    --color-text:hsl(356.13,39.24%,15.49%);
-    --color-border: hsl(356.13,39.24%,15.49%);
-    --color-primary: hsl(234.23,49.06%,41.57%);
-    --color-accent: hsl(195.37,50.62%,31.76%);
-    --color-muted: hsl(353.57,45.16%,24.31%);
+  
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-background: hsl(0,91.3%,95.49%);
+        --color-text:hsl(356.13,39.24%,15.49%);
+        --color-border: hsl(356.13,39.24%,15.49%);
+        --color-primary: hsl(234.23,49.06%,41.57%);
+        --color-accent: hsl(234.23,49.06%,41.57%);
+        --color-muted: hsl(353.57,45.16%,24.31%);
+    }
 }
 
 body {
@@ -51,8 +53,8 @@ a {
 }
 
 hr {
-    height: 5px;
-    background-color: var(--color-accent);
+    height: 3px;
+    background-color: var(--color-muted);
     border: none;
 }
 
@@ -62,13 +64,17 @@ h1, h2 {
     margin-bottom: 0;
 }
 
-.accent::after {
+.accent-underline {
+    width: max-content;
+    max-width: 100%;
+}
+
+.accent-underline::after {
     content: '';
     display: block;
     height: 5px;
     background-color: var(--color-accent);
     margin-top: 0.5rem;
-    width: 80%;
 }
 
 h1, h2, h3 {
@@ -113,13 +119,14 @@ nav a {
     padding: 0.5rem 1rem;
     text-decoration: none;
 
-    background: var(--color-text);
+
     border: 1px solid var(--color-primary);
-    color: var(--color-background);
+    color: var(--color-primary);
 }
 
 nav a[aria-current] {
     background: var(--color-primary);
+    color: var(--color-background);
     border: 1px solid transparent;
 }
 
@@ -138,7 +145,7 @@ footer p {
 .cms-content pre {
     max-width: 100%;
     overflow: scroll;
-    border: 1px dashed black;
+    border: 1px dashed var(--color-border);
     padding: 0.5rem;
 
     font-size: smaller;
