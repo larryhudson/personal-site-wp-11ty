@@ -1,14 +1,38 @@
+
+
+/* Color variables */
+
+/* Dark theme by default */
+:root {
+    --color-background: rgb(32, 32, 69);
+    --color-text:rgb(236, 233, 251);
+    --color-border: hsl(250,69.23%,94.9%);
+    --color-primary: hsl(18.11,100%,89.61%);
+    --color-accent: hsl(16.78,86.83%,52.35%);
+    --color-muted: hsl(247.69,66.1%,88.43%);
+}
+
+body.light {
+    --color-background: hsl(0,91.3%,95.49%);
+    --color-text:hsl(356.13,39.24%,15.49%);
+    --color-border: hsl(356.13,39.24%,15.49%);
+    --color-primary: hsl(234.23,49.06%,41.57%);
+    --color-accent: hsl(195.37,50.62%,31.76%);
+    --color-muted: hsl(353.57,45.16%,24.31%);
+}
+
 body {
     font-size: 1.25rem;
     line-height: 1.75;
-    background: rgba(0, 0, 0, 0) linear-gradient(225deg, rgb(200, 174, 73), rgb(241, 55, 48) 100%) repeat scroll 0% 0%;
+    background: var(--color-background);    
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--color-text);
 }
 
 .container {
     max-width: 72ch;
     margin: 0 auto;
-    background: #e8fff9;
+    background: var(--color-background);
     padding: 2rem;
 }
 
@@ -18,26 +42,34 @@ body {
 }
 
 :focus {
-    outline: 2px dashed #f13730;
+    outline: 2px dashed var(--color-primary);
     outline-offset: 4px;
 }
 
 a {
-    color: #c0130d;
+    color: var(--color-text);
 }
 
-a:visited {
-    color: #6a0b07;
+hr {
+    height: 5px;
+    background-color: var(--color-accent);
+    border: none;
 }
 
 /* Typography */
 h1, h2 {
     margin-top: 1rem;
     margin-bottom: 0;
-    
 }
 
-
+.accent::after {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: var(--color-accent);
+    margin-top: 0.5rem;
+    width: 80%;
+}
 
 h1, h2, h3 {
     line-height: 1.375;
@@ -81,21 +113,19 @@ nav a {
     padding: 0.5rem 1rem;
     text-decoration: none;
 
-    background: white;
-    border: 1px solid #f13730;
-    color: black;
+    background: var(--color-text);
+    border: 1px solid var(--color-primary);
+    color: var(--color-background);
 }
 
 nav a[aria-current] {
-    background: #f13730;
-    color: white;
+    background: var(--color-primary);
     border: 1px solid transparent;
 }
 
 /* Footer */
 footer {
     font-size: smaller;
-
     margin-top: 2rem;
 }
 
