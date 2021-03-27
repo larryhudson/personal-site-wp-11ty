@@ -127,3 +127,9 @@ footer p {
 .post-blurb h3 {
     margin: 0;
 }
+
+@media (min-width: 768px) {
+    .featured-image picture {
+        float: right;
+    }
+}

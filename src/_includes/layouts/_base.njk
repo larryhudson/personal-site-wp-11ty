@@ -12,10 +12,14 @@
     <meta name="twitter:site" content="@{{site.twitter}}">
     <meta name="twitter:creator" content="@{{site.twitter}}">
     <meta name="twitter:url" content="{{site.baseURL}}{{page.url}}">
+    <meta name="twitter:title" content="{% if currentPage.title %}{{currentPage.title}}{% else %}{{site.title}}{% endif %}">
+    <meta name="twitter:description" content="{% if currentPage %}{{currentPage.excerpt|striptags|truncate(196)}}{% else %}{{ site.description }}{% endif %}">
 
     <!--Schema-->
     <link rel="author" href="{{site.baseURL}}">
     <link rel="publisher" href="{{site.baseURL}}">
+    <meta itemprop="name" content="{% if currentPage.title %}{{currentPage.title}}{% else %}{{site.title}}{% endif %}">
+    <meta name="description" content="{% if currentPage %}{{currentPage.excerpt|striptags|truncate(196)}}{% else %}{{ site.description }}{% endif %}">
         
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{site.baseURL}}{{page.url}}">
@@ -23,20 +27,8 @@
     <meta property="og:site_name" content="{{site.title}}">
     <meta property="og:locale" content="en_AU">
     <meta property="article:author" content="{{site.baseURL}}">
-    
-    {%- block seo -%}
-    <!--Twitter Card-->
-    <meta name="twitter:title" content="{{title}}">
-    <meta name="twitter:description" content="{{ site.description }}">
-    
-    <!--Schema-->
-    <meta itemprop="name" content="{{title}}">
-    <meta name="description" content="{{ site.description }}">
-    
-    <!-- Facebook OpenGraph -->
-    <meta property="og:title" content="{{title}}">
-    <meta property="og:description" content="{{ site.description }}">
-    {%- endblock -%}
+    <meta property="og:title" content="{% if currentPage.title %}{{currentPage.title}}{% else %}{{site.title}}{% endif %}">
+    <meta property="og:description" content="{% if currentPage %}{{currentPage.excerpt|striptags|truncate(196)}}{% else %}{{ site.description }}{% endif %}">
 </head>
 <body>
     <div class="container">
@@ -46,6 +38,13 @@
     </header>
     <hr />
     <main>
+    
+    <div class="featured-image">
+    {% block featuredImage %}
+    {% image wp.homePage.featuredImage.sourceUrl, wp.homePage.featuredImage.altText %}
+    {% endblock %}
+    </div>
+
     {% block content %}
     {{content|safe}}
     {% endblock %}

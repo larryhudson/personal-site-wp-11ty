@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
     const { DateTime }  = require('luxon');
     const util          = require('util');
+    const Image = require("@11ty/eleventy-img");
 
     // Layout aliases for convenience
     eleventyConfig.addLayoutAlias('default', 'layouts/_base.njk');
@@ -22,6 +23,29 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addPassthroughCopy("./src/css");
+
+    // image shortcode
+    async function imageShortcode(src, alt, sizes) {
+      let metadata = await Image(src, {
+        widths: [150],
+        formats: ["avif", "jpeg"],
+        outputDir: '_site/img',
+      });
+    
+      let imageAttributes = {
+        alt,
+        sizes,
+        loading: "lazy",
+        decoding: "async",
+      };
+    
+      // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+      return Image.generateHTML(metadata, imageAttributes);
+    }
+
+    eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+    eleventyConfig.addLiquidShortcode("image", imageShortcode);
+    eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
 
   

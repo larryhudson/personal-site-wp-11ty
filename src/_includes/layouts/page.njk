@@ -1,17 +1,6 @@
 {% extends 'layouts/_base.njk' %}
-{% block seo %}
-    <!--Twitter Card-->
-    <meta name="twitter:title" content="{{wpPage.title}}">
-    <meta name="twitter:description" content="{{ wpPage.content|striptags|truncate(196) }}">
-    
-    <!--Schema-->
-    <meta itemprop="name" content="{{wpPage.title}}">
-    <meta name="description" content="{{ wpPage.content|striptags|truncate(196) }}">
-    
-    <!-- Facebook OpenGraph -->
-    <meta property="og:title" content="{{wpPage.title}}">
-    <meta property="og:description" content="{{ wpPage.content|striptags|truncate(196) }}">
-{% endblock %}
+{% set currentPage = wpPage %}
+
 {% block content %}
 <h1>{{wpPage.title}}</h1>
 {{wpPage.content|safe}}

@@ -1,7 +1,10 @@
 {% extends 'layouts/_base.njk' %}
+{% set currentPage = wp.homePage %}
 
 {% block content %}
 {{content|safe}}
 
 {% include 'partials/latestPosts.njk' %}
+
+
 {% endblock %}

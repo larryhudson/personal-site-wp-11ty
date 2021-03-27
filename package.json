@@ -19,6 +19,7 @@
     "luxon": "^1.26.0"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^0.8.2"
   }
 }

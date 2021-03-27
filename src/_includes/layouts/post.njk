@@ -1,20 +1,14 @@
 {% extends 'layouts/_base.njk' %}
-{% block seo %}
-    <!--Twitter Card-->
-    <meta name="twitter:title" content="{{post.title}}">
-    <meta name="twitter:description" content="{{ post.excerpt|striptags|truncate(196) }}">
-    
-    <!--Schema-->
-    <meta itemprop="name" content="{{post.title}}">
-    <meta name="description" content="{{ post.excerpt|striptags|truncate(196) }}">
-    
-    <!-- Facebook OpenGraph -->
-    <meta property="og:title" content="{{post.title}}">
-    <meta property="og:description" content="{{ post.excerpt|striptags|truncate(196) }}">
-{% endblock %}
+{% set currentPage = post %}
 
 
 {% block title %}{{post.title}} - Larry Hudson{% endblock %}
+
+{% block featuredImage %}
+{% if post.featuredImage.node.sourceUrl %}
+{% image post.featuredImage.node.sourceUrl, post.featuredImage.node.altText %}
+{% endif %}
+{% endblock %}
 
 {% block content %}
 <h1>{{post.title}}</h1>

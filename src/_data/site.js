@@ -1,5 +1,5 @@
 module.exports = {
-    'baseURL': 'https://www.larryhudson.io',
+    'baseURL': process.env.ELEVENTY_ENV == 'production' ? 'https://www.larryhudson.io' : 'http://localhost:8080',
     'title': 'Larry Hudson',
     'description': 'Larry Hudson is a web developer based in Melbourne, Australia, focusing on simplicity and accessibility.',
     'twitter': 'larryhudsondev'

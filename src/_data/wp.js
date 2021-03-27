@@ -11,12 +11,24 @@ async function getData() {
             title
             date
             excerpt
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+              }
+            }
           }
         }
         homePage: nodeByUri(uri: "/") {
           ... on Page {
             content
             title
+            featuredImage {
+              node {
+                altText
+                sourceUrl
+              }
+            }
           }
         }
         postsPage: nodeByUri(uri: "/posts/") {
@@ -28,10 +40,19 @@ async function getData() {
       }      
       `
       });
+      
+
+      const homePageData = {
+        ...data.homePage,
+        featuredImage: {
+          ...data.homePage.featuredImage.node
+        }
+      }
+
 
       return {
         posts: data.posts.nodes,
-        homePage: data.homePage,
+        homePage: homePageData,
         postsPage: data.postsPage
       }
   }
