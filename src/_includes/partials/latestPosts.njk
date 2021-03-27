@@ -3,7 +3,7 @@
 {% for post in wp.posts %}
 <div class="post-blurb">
 <h3><a href="{{site.baseURL}}/{{post.slug}}/">{{post.title}}</a></h3>
-<p class="date">{{post.date | readableDate}}</p>
+<p class="date">{{post.date|readableDate}}</p>
 <p>{{post.excerpt|striptags|truncate(196)|safe}}
 </p>
 </div>

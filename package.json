@@ -6,7 +6,7 @@
   "scripts": {
     "build": "ELEVENTY_ENV=production npx eleventy",
     "dev": "ELEVENTY_ENV=development npx eleventy --serve",
-    "start": "ELEVENTY_ENV = development npx eleventy --serve",
+    "start": "ELEVENTY_ENV=development npx eleventy --serve",
     "clean": "rm -rf _site",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

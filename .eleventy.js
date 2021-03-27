@@ -14,7 +14,14 @@ module.exports = function(eleventyConfig) {
   
     // Date helpers
     eleventyConfig.addFilter('readableDate', dateObj => {
-      return DateTime.fromISO(dateObj).toFormat('d LLLL y');
+      console.log(dateObj)
+
+      var myDate = DateTime.fromISO(dateObj, {
+        zone: 'Australia/Melbourne'
+      });
+      console.log(myDate.isValid)
+      console.log(myDate.invalidReason)
+      return myDate.toFormat('d LLLL y');
     });
     eleventyConfig.addFilter('htmlDate', dateObj => {
       return DateTime.fromJSDate(dateObj, {
