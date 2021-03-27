@@ -26,14 +26,17 @@
 body {
     font-size: 1.25rem;
     line-height: 1.75;
+    background: white;
     background: var(--color-background);    
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: black;
     color: var(--color-text);
 }
 
 .container {
     max-width: 72ch;
     margin: 0 auto;
+    background: white;
     background: var(--color-background);
     padding: 2rem;
 }
@@ -44,16 +47,19 @@ body {
 }
 
 :focus {
+    outline: 2px dashed darkred;
     outline: 2px dashed var(--color-primary);
     outline-offset: 4px;
 }
 
 a {
+    color: darkred;
     color: var(--color-text);
 }
 
 hr {
     height: 3px;
+    background-color: lightgray;
     background-color: var(--color-muted);
     border: none;
 }
@@ -73,6 +79,7 @@ h1, h2 {
     content: '';
     display: block;
     height: 5px;
+    background-color: darkred;
     background-color: var(--color-accent);
     margin-top: 0.5rem;
 }
@@ -118,14 +125,16 @@ nav ul > * + * {
 nav a {
     padding: 0.5rem 1rem;
     text-decoration: none;
-
-
+    border: 1px solid darkred;
     border: 1px solid var(--color-primary);
+    color: black;
     color: var(--color-primary);
 }
 
 nav a[aria-current] {
+    background: darkred;
     background: var(--color-primary);
+    color: white;
     color: var(--color-background);
     border: 1px solid transparent;
 }
@@ -145,9 +154,9 @@ footer p {
 .cms-content pre {
     max-width: 100%;
     overflow: scroll;
+    border: 1px dashed black;
     border: 1px dashed var(--color-border);
     padding: 0.5rem;
-
     font-size: smaller;
 }
 
