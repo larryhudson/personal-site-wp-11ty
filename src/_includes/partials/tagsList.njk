@@ -1,0 +1,8 @@
+<p style="display: inline">Filter by tag:</p>
+<ul class="tag-list">
+    {% for tag in wp.tags %}
+    <li>
+        <a href="/tags/{{tag.slug}}" {% if page.url == '/tags/' + tag.slug + '/' %}aria-current="page"{% endif %}>{{tag.slug}} ({{tag.count}})</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,10 +1,14 @@
 {% extends 'layouts/_base.njk' %}
 {% set currentPage = wp.homePage %}
 
+{% block featuredImage %}
+{% image wp.homePage.featuredImage.sourceUrl, wp.homePage.featuredImage.altText %}
+{% endblock %}
+
 {% block content %}
 {{content|safe}}
 
-{% include 'partials/latestPosts.njk' %}
-
+{% set posts = wp.posts %}
+{% include 'partials/postsList.njk' %}
 
 {% endblock %}

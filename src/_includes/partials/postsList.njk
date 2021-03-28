@@ -1,6 +1,9 @@
-<h2 class="accent-underline">Latest posts</h2>
+<section class="post-list">
+
+<h2 class="accent-underline">{% if postsHeading %}{{postsHeading}}{% else %}Latest posts{% endif %}</h2>
+
 <div class="post-blurbs">
-{% for post in wp.posts %}
+{% for post in posts %}
 <div class="post-blurb">
 <h3><a href="{{site.baseURL}}/{{post.slug}}/">{{post.title}}</a></h3>
 <p class="date">{{post.date|readableDate}}</p>
@@ -9,3 +12,4 @@
 </div>
 {% endfor %}
 </div>
+</section>

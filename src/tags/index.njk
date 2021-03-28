@@ -1,0 +1,14 @@
+---
+pagination:
+  data: wp.tags
+  size: 1
+  alias: tag
+permalink: "/tags/{{tag.slug}}/index.html"
+layout: 'layouts/tag.njk'
+title: {{tag.slug}}
+---
+{{wp.postsPage.content|safe}}
+{% include 'partials/tagsList.njk' %}
+{% set posts = tag.posts.nodes %}
+{% set postsHeading = 'Posts tagged with ' + tag.slug %}
+{% include 'partials/postsList.njk' %}

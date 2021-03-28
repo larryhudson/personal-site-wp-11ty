@@ -1,5 +1,10 @@
 {% extends 'layouts/_base.njk' %}
 {% set currentPage = wp.postsPage %}
+{% set posts = tag.posts.nodes %}
+
+{% block title %}
+Tag: {{tag.slug}} - Larry Hudson
+{% endblock %}
 
 {% block featuredImage %}
 {% endblock %}

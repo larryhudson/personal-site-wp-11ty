@@ -37,6 +37,20 @@ async function getData() {
             title
           }
         }
+        tags {
+          nodes {
+            slug
+            count
+            posts {
+              nodes {
+                slug
+                title
+                excerpt
+                date
+              }
+            }
+          }
+        }
       }      
       `
       });
@@ -53,7 +67,8 @@ async function getData() {
       return {
         posts: data.posts.nodes,
         homePage: homePageData,
-        postsPage: data.postsPage
+        postsPage: data.postsPage,
+        tags: data.tags.nodes
       }
   }
 

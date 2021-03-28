@@ -165,6 +165,11 @@ footer p {
 }
 
 /* Latest posts */
+.post-list {
+    margin-top: 2rem;
+}
+
+
 .post-blurbs {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -193,4 +198,35 @@ footer p {
     .featured-image picture {
         float: right;
     }
+}
+
+.tag-list {
+    display: inline;
+    padding: 0 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.tag-list li {
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.tag-list a,
+.clear-filter {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border: 1px solid darkred;
+    border: 1px solid var(--color-primary);
+    color: black;
+    color: var(--color-primary);
+
+    border-radius: 999px;
+}
+
+.tag-list a[aria-current] {
+    background: darkred;
+    background: var(--color-primary);
+    color: white;
+    color: var(--color-background);
 }
