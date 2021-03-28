@@ -93,6 +93,10 @@ header {
     margin-bottom: 2rem;
 }
 
+.tagline {
+    margin: 0.25rem 0;
+}
+
 main, footer {
     margin-top: 2rem;
 }
