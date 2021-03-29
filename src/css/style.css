@@ -164,6 +164,21 @@ footer p {
     font-size: smaller;
 }
 
+.cms-content figure {
+    padding: 0;
+    margin: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cms-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cms-content figcaption {
+    font-size: smaller;
+}
+
 /* Latest posts */
 .post-list {
     margin-top: 2rem;

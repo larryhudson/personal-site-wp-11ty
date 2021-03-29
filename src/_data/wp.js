@@ -1,5 +1,6 @@
 // required packages
 const graphqlQuery = require('../_utils/graphql');
+const replaceImagesInContent = require('../_utils/replace-images');
 
 async function getData() {
     const data = await graphqlQuery({
@@ -63,6 +64,9 @@ async function getData() {
         }
       }
 
+      for (post of data.posts.nodes) {
+        post.content = await replaceImagesInContent(post.content)
+      }
 
       return {
         posts: data.posts.nodes,

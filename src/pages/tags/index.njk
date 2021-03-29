@@ -4,4 +4,5 @@ permalink: '/tags/index.html'
 ---
 {{wp.postsPage.content|safe}}
 {% include 'partials/tagsList.njk' %}
+{% set posts = wp.posts %}
 {% include 'partials/postsList.njk' %}

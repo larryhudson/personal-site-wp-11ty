@@ -14,13 +14,11 @@ module.exports = function(eleventyConfig) {
   
     // Date helpers
     eleventyConfig.addFilter('readableDate', dateObj => {
-      console.log(dateObj)
 
       var myDate = DateTime.fromISO(dateObj, {
         zone: 'Australia/Melbourne'
       });
-      console.log(myDate.isValid)
-      console.log(myDate.invalidReason)
+
       return myDate.toFormat('d LLLL y');
     });
     eleventyConfig.addFilter('htmlDate', dateObj => {
@@ -49,6 +47,38 @@ module.exports = function(eleventyConfig) {
       // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
       return Image.generateHTML(metadata, imageAttributes);
     }
+
+    async function optimiseImages(content) {
+      var regex = /<img.*?src=\"(.*?)\"(.*?)\>/;
+      var src = regex.exec(content);
+
+      if (src) {
+        [imgTag, imgUrl] = src;
+        console.log(imgTag)
+        console.log(imgUrl)
+
+        let metadata = await Image(imgUrl, {
+          widths: [480, 610],
+          formats: ["avif", "jpeg"],
+          outputDir: '_site/img',
+        });
+
+        var imgHtml = await Image.generateHTML(metadata, {
+          alt: '',
+          sizes: [480, 610]
+        })
+
+        console.log(imgHtml)
+
+        var newContent = content.replace(imgTag, imgHtml)
+      } else {
+        var newContent = content
+      }
+
+      return await newContent
+    }
+
+    eleventyConfig.addFilter('optimiseImages', optimiseImages)
 
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
     eleventyConfig.addLiquidShortcode("image", imageShortcode);
