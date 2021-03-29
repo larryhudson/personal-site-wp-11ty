@@ -48,44 +48,8 @@ module.exports = function(eleventyConfig) {
       return Image.generateHTML(metadata, imageAttributes);
     }
 
-    async function optimiseImages(content) {
-      var regex = /<img.*?src=\"(.*?)\"(.*?)\>/;
-      var src = regex.exec(content);
-
-      if (src) {
-        [imgTag, imgUrl] = src;
-        console.log(imgTag)
-        console.log(imgUrl)
-
-        let metadata = await Image(imgUrl, {
-          widths: [480, 610],
-          formats: ["avif", "jpeg"],
-          outputDir: '_site/img',
-        });
-
-        var imgHtml = await Image.generateHTML(metadata, {
-          alt: '',
-          sizes: [480, 610]
-        })
-
-        console.log(imgHtml)
-
-        var newContent = content.replace(imgTag, imgHtml)
-      } else {
-        var newContent = content
-      }
-
-      return await newContent
-    }
-
-    eleventyConfig.addFilter('optimiseImages', optimiseImages)
-
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-    eleventyConfig.addLiquidShortcode("image", imageShortcode);
-    eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
-
-  
     return  {
       dir: {
         input: "src",

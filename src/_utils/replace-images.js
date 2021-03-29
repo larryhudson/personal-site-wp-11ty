@@ -6,8 +6,6 @@ async function replaceImagesInContent(content) {
     var match;
     var workingString = content;
 
-    var substitutions = []
-
     while ((match = re.exec(content)) != null) {
 
         [imgTag, imgUrl] = match;
@@ -27,16 +25,7 @@ async function replaceImagesInContent(content) {
             imgTag,
             imgHtml
         )
-
-        // substitutions.push({
-        //     from: imgTag,
-        //     to: imgHtml
-        // })
     }
-
-    // for (s of substitutions) {
-    //     workingString = workingString.replace(s.from, s.to)
-    // }
 
     return workingString
 }
