@@ -34,22 +34,33 @@ body {
 }
 
 .container {
-    max-width: 72ch;
+    max-width: 54ch;
     margin: 0 auto;
     background: white;
     background: var(--color-background);
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
-.cms-content p,
-.cms-content ul {
-    max-width: 48ch;
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+header .site-title {
+    flex-grow: 1;
+    padding-right: 0.25rem;
 }
 
 :focus {
-    outline: 2px dashed darkred;
-    outline: 2px dashed var(--color-primary);
+    outline: 1px dashed darkred;
+    outline: 1px dashed var(--color-primary);
     outline-offset: 4px;
+}
+
+:active {
+    outline: none;
 }
 
 a {
@@ -89,21 +100,13 @@ h1, h2, h3 {
     font-family: Georgia, serif;
 }
 
-header {
-    margin-bottom: 2rem;
-}
-
 .tagline {
     margin: 0.25rem 0;
 }
 
-main, footer {
-    margin-top: 2rem;
-}
-
 hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* Header */
@@ -119,14 +122,12 @@ nav ul {
     padding: 0;
 
     display: flex;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
 
-nav ul > * + * {
-    margin-left: 1rem;
-}
-
 nav a {
+    display: block; 
     padding: 0.5rem 1rem;
     text-decoration: none;
     border: 1px solid darkred;
@@ -148,7 +149,6 @@ footer {
     font-size: smaller;
     margin-top: 2rem;
 }
-
 
 footer p {
     margin-top: 0.5rem;
@@ -184,15 +184,51 @@ footer p {
     margin-top: 2rem;
 }
 
-
 .post-blurbs {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
+.post-blurb {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: var(--color-background);
+}
 
-.post-blurbs > * + * {
-    margin-top: 2rem;
+.post-blurb a::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+}
+
+.post-blurb:hover,
+.post-blurb:focus-within {
+    transform: translateY(-5px);
+    z-index: 2;
+    border-color: darkred;
+    border-color: var(--color-primary);
+}
+
+.post-blurb:active {
+    transform: scale(0.99);
+}
+
+.post-blurb .excerpt {
+    font-size: smaller;
+}
+
+a:hover {
+    color: darkred;
+    color: var(--color-primary);
 }
 
 

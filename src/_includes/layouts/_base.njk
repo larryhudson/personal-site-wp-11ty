@@ -30,11 +30,13 @@
     <meta property="og:title" content="{% if currentPage.title %}{{currentPage.title}}{% else %}{{site.title}}{% endif %}">
     <meta property="og:description" content="{% if currentPage %}{{currentPage.excerpt|striptags|truncate(196)}}{% else %}{{ site.description }}{% endif %}">
 </head>
-<body>
+<body{% if page.url != '/' %} class="not-homepage"{% endif %}>
     <div class="container">
     <header>
+        <div class="site-title">
         <h1>{{site.title}}</h1>
         <p class="tagline">{{site.tagline}}</p>
+        </div>
         {% include 'partials/navigation.njk' %}
     </header>
     <hr />
