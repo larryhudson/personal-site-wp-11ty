@@ -305,6 +305,31 @@ a:hover {
     gap: 1rem;
 }
 
+
+picture img {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+/* On mobile: albums have text on right hand side */
+.album {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.album picture {
+    flex: 1 1 100px;
+}
+
+
+
+
+.album div {
+    flex: 1 0 150px;
+}
+
 .album div {
     padding: 0.25rem 0.5rem
 }
