@@ -201,6 +201,14 @@ footer p {
     transition: 0.1s transform;
 }
 
+.post-blurb a {
+    text-decoration: none;
+}
+
+.post-blurb a:hover {
+    text-decoration: underline;
+}
+
 .post-blurb a::after {
     position: absolute;
     top: 0;
