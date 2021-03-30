@@ -194,10 +194,11 @@ footer p {
 
 .post-blurb {
     padding: 1rem;
-    border: 2px dashed var(--color-border);
+    border: 2px solid var(--color-border);
     position: relative;
     border-radius: 5px;
     background: var(--color-background);
+    transition: 0.1s transform;
 }
 
 .post-blurb a::after {
@@ -211,11 +212,10 @@ footer p {
 
 .post-blurb:hover,
 .post-blurb:focus-within {
-    transform: translateY(-5px);
-    z-index: 2;
     border-color: darkred;
     border-color: var(--color-primary);
-    border-style: solid;
+
+    transform: translateY(-5px);
 }
 
 .post-blurb:active {
