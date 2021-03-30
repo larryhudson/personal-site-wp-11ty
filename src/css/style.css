@@ -194,10 +194,9 @@ footer p {
 
 .post-blurb {
     padding: 1rem;
-    border: 1px solid var(--color-border);
+    border: 2px dashed var(--color-border);
     position: relative;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     background: var(--color-background);
 }
 
@@ -216,6 +215,7 @@ footer p {
     z-index: 2;
     border-color: darkred;
     border-color: var(--color-primary);
+    border-style: solid;
 }
 
 .post-blurb:active {
