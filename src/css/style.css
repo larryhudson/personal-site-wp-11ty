@@ -192,24 +192,23 @@ footer p {
     gap: 1rem;
 }
 
-.post-blurb {
-    padding: 1rem;
-    border: 2px solid var(--color-border);
+.clicky-card {
     position: relative;
     border-radius: 5px;
     background: var(--color-background);
     transition: 0.1s transform;
+    border: 2px solid var(--color-border);
 }
 
-.post-blurb a {
+.clicky-card a {
     text-decoration: none;
 }
 
-.post-blurb a:hover {
+.clicky-card a:hover {
     text-decoration: underline;
 }
 
-.post-blurb a::after {
+.clicky-card a::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -218,16 +217,20 @@ footer p {
     content: '';
 }
 
-.post-blurb:hover,
-.post-blurb:focus-within {
+.clicky-card:hover,
+.clicky-card:focus-within {
     border-color: darkred;
     border-color: var(--color-primary);
 
     transform: translateY(-5px);
 }
 
-.post-blurb:active {
+.clicky-card:active {
     transform: scale(0.99);
+}
+
+.post-blurb {
+    padding: 1rem;
 }
 
 .post-blurb .excerpt {
@@ -288,4 +291,25 @@ a:hover {
     background: var(--color-primary);
     color: white;
     color: var(--color-background);
+}
+
+/* Music page */
+.albums-grid {
+    list-style: none;
+    padding: 0;
+
+    font-size: smaller;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.album div {
+    padding: 0.25rem 0.5rem
+}
+
+.album img {
+    width: 100%;
+    height: auto;
 }

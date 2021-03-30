@@ -2,7 +2,7 @@
 {% set currentPage = wp.homePage %}
 
 {% block featuredImage %}
-{% image wp.homePage.featuredImage.sourceUrl, wp.homePage.featuredImage.altText %}
+{% image wp.homePage.featuredImage.sourceUrl, wp.homePage.featuredImage.altText, [150, 300] %}
 {% endblock %}
 
 {% block content %}

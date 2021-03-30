@@ -4,7 +4,11 @@ module.exports = [
         url: '/'
     },
     {
-        label: 'Posts',
+        label: 'Writing',
         url: '/posts/'
+    },
+    {
+        label: 'Music',
+        url: '/music/'
     }
 ]

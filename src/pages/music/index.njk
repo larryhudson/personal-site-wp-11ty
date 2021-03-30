@@ -1,0 +1,25 @@
+---
+title: Music I like
+permalink: '/music/index.html'
+layout: layouts/_base.njk
+---
+
+<h1>Music I like</h1>
+
+<p>This pages pulls data from my <a href="https://www.last.fm/user/harryludson">Last.fm profile</a>.</p>
+
+<p>This data is accurate as of {% currentDate %}.</p>
+
+<h2 class="accent-underline">My top albums for the last week</h2>
+
+<ul class="albums-grid">
+{% for album in musicPage.album %}
+<li class="album clicky-card">
+{% image album.imageUrl, "", [150, 300] %}
+<div><em>
+    <a href="https://duckduckgo.com/{{album.artist.name}} {{album.name}} album">{{album.name}}
+    </a></em><br />
+{{album.artist.name}}</div>
+</li>
+{% endfor %}
+</ul>

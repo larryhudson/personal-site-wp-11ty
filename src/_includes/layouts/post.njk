@@ -6,7 +6,7 @@
 
 {% block featuredImage %}
 {% if post.featuredImage.node.sourceUrl %}
-{% image post.featuredImage.node.sourceUrl, post.featuredImage.node.altText %}
+{% image post.featuredImage.node.sourceUrl, post.featuredImage.node.altText, [150, 300] %}
 {% endif %}
 {% endblock %}
 

@@ -27,12 +27,20 @@ module.exports = function(eleventyConfig) {
       }).toFormat('y-MM-dd');
     });
 
+    eleventyConfig.addShortcode("currentDate", () => {
+      var currentDate = DateTime.fromJSDate(new Date(), {
+        zone: 'Australia/Melbourne'
+      });
+
+      return currentDate.toFormat('d LLLL y');
+    })
+
     eleventyConfig.addPassthroughCopy("./src/css");
 
     // image shortcode
     async function imageShortcode(src, alt, sizes) {
       let metadata = await Image(src, {
-        widths: [150],
+        widths: [150, 300],
         formats: ["avif", "jpeg"],
         outputDir: '_site/img',
       });
