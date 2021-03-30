@@ -256,6 +256,11 @@ a:hover {
     margin: 0;
 }
 
+.featured-image picture,
+.featured-image img {
+    max-width: 188px;
+}
+
 @media (min-width: 768px) {
     .featured-image picture {
         float: right;
@@ -312,7 +317,6 @@ picture img {
     display: block;
 }
 
-/* On mobile: albums have text on right hand side */
 .album {
     display: flex;
     align-items: center;
@@ -322,9 +326,6 @@ picture img {
 .album picture {
     flex: 1 1 100px;
 }
-
-
-
 
 .album div {
     flex: 1 0 150px;
