@@ -1,3 +1,4 @@
+<p class="tag-filter-label">Filter posts by tag:</p>
 <ul class="tag-list">
     {% for tag in tags %}
     <li class="clicky-card{% if page.url == '/tags/' + tag.slug + '/' %} current{% endif %}">

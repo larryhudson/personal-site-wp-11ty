@@ -80,7 +80,7 @@ header {
 
 header .site-title {
     flex-grow: 1;
-    padding-right: 0.25rem;
+    padding-right: 1rem;
 }
 
 
@@ -132,14 +132,14 @@ h1, h2 {
 
 nav ul {
     list-style: none;
-    padding: 0;
-
+    padding: 1rem 0;
+    margin: -0.25rem;
     display: flex;
     flex-wrap: wrap;
 }
 
-nav ul > * + * {
-    margin-left: 0.5rem;
+nav li {
+    margin: 0.25rem;
 }
 
 nav a {
@@ -243,6 +243,12 @@ nav a {
     }
   }
 
+  .clicky-card.no-transition:hover,
+  .clicky-card.no-transition:focus-within,
+  .clicky-card.no-transition:active {
+      transform: none;
+  }
+
 .clicky-card.current {
     border: 2px solid var(--color-primary);
     background: darkred;
@@ -279,10 +285,16 @@ nav a {
     }
 }
 
+.tag-filter-label {
+    margin-bottom: 0.5rem;
+}
+
 .tag-list {
-    display: inline;
+    display: flex;
+    flex-wrap: wrap;
     padding: 0 0.5rem;
-    margin-top: 2rem;
+    margin: -1rem;
+    margin-top: 0;
     margin-bottom: 2rem;
 }
 
@@ -292,7 +304,8 @@ nav a {
 }
 
 .tag-list a {
-    padding: 0.5rem 1rem;
+    display: block;
+    padding: 0.25rem 0.5rem;
 }
 
 /* Music page */
