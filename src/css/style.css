@@ -34,7 +34,7 @@ body {
 }
 
 .container {
-    max-width: 54ch;
+    max-width: 60ch;
     margin: 0 auto;
     background: white;
     background: var(--color-background);
