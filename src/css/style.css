@@ -130,10 +130,10 @@ nav a {
     display: block; 
     padding: 0.5rem 1rem;
     text-decoration: none;
-    border: 1px solid darkred;
-    border: 1px solid var(--color-primary);
-    color: black;
-    color: var(--color-primary);
+}
+
+nav .current {
+    border: 2px solid var(--color-primary);
 }
 
 nav a[aria-current] {
@@ -141,7 +141,6 @@ nav a[aria-current] {
     background: var(--color-primary);
     color: white;
     color: var(--color-background);
-    border: 1px solid transparent;
 }
 
 /* Footer */
@@ -222,7 +221,7 @@ footer p {
     border-color: darkred;
     border-color: var(--color-primary);
 
-    transform: translateY(-5px);
+    transform: translateY(-0.25rem);
 }
 
 .clicky-card:active {
@@ -276,9 +275,13 @@ a:hover {
 
 .tag-list li {
     display: inline-block;
-    margin: 0.5rem;
+    margin: 0.25rem;
 }
 
+.tag-list a {
+    padding: 0.5rem 1rem;
+}
+/* 
 .tag-list a,
 .clear-filter {
     padding: 0.5rem 1rem;
@@ -289,7 +292,7 @@ a:hover {
     color: var(--color-primary);
 
     border-radius: 999px;
-}
+} */
 
 .tag-list a[aria-current] {
     background: darkred;

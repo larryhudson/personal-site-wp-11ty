@@ -7,6 +7,7 @@ permalink: "/tags/{{tag.slug}}/index.html"
 layout: 'layouts/tag.njk'
 title: {{tag.slug}}
 ---
+<h1>Writing</h1>
 {{wp.postsPage.content|safe}}
 {% include 'partials/tagsList.njk' %}
 {% set posts = tag.posts.nodes %}
