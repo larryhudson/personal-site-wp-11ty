@@ -1,7 +1,7 @@
 <p style="display: inline">Filter by tag:</p>
 <ul class="tag-list">
     {% for tag in wp.tags %}
-    <li class="clicky-card">
+    <li class="clicky-card{% if page.url == '/tags/' + tag.slug + '/' %} current{% endif %}">
         <a href="/tags/{{tag.slug}}" {% if page.url == '/tags/' + tag.slug + '/' %}aria-current="page"{% endif %}>{{tag.slug}} ({{tag.count}})</a>
     </li>
     {% endfor %}

@@ -132,15 +132,16 @@ nav a {
     text-decoration: none;
 }
 
-nav .current {
+.clicky-card.current {
     border: 2px solid var(--color-primary);
-}
-
-nav a[aria-current] {
     background: darkred;
     background: var(--color-primary);
-    color: white;
+    
+}
+
+.clicky-card.current a {
     color: var(--color-background);
+
 }
 
 /* Footer */
@@ -275,7 +276,7 @@ a:hover {
 
 .tag-list li {
     display: inline-block;
-    margin: 0.25rem;
+    margin: 0.5rem;
 }
 
 .tag-list a {
@@ -294,12 +295,12 @@ a:hover {
     border-radius: 999px;
 } */
 
-.tag-list a[aria-current] {
+/* .tag-list a[aria-current] {
     background: darkred;
     background: var(--color-primary);
     color: white;
     color: var(--color-background);
-}
+} */
 
 /* Music page */
 .albums-grid {
