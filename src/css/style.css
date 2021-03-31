@@ -234,6 +234,15 @@ nav a {
     transform: scale(0.95);
 }
 
+/* Turn off transitions for people who don't want it */
+@media (prefers-reduced-motion) {
+    .clicky-card:hover,
+    .clicky-card:focus-within,
+    .clicky-card:active {
+      transform: none;
+    }
+  }
+
 .clicky-card.current {
     border: 2px solid var(--color-primary);
     background: darkred;
