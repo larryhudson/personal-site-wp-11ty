@@ -72,7 +72,7 @@ async function getData() {
         posts: data.posts.nodes,
         homePage: homePageData,
         postsPage: data.postsPage,
-        tags: data.tags.nodes
+        tags: data.tags.nodes.sort((a, b) => b.count - a.count)
       }
   }
 

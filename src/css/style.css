@@ -41,18 +41,6 @@ body {
     padding: 1rem 2rem;
 }
 
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-header .site-title {
-    flex-grow: 1;
-    padding-right: 0.25rem;
-}
-
 :focus {
     outline: 1px dashed darkred;
     outline: 1px dashed var(--color-primary);
@@ -68,14 +56,59 @@ a {
     color: var(--color-text);
 }
 
+a:hover {
+    color: darkred;
+    color: var(--color-primary);
+}
+
 hr {
     height: 3px;
     background-color: lightgray;
     background-color: var(--color-muted);
     border: none;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+header .site-title {
+    flex-grow: 1;
+    padding-right: 0.25rem;
+}
+
+
+header .tagline {
+    margin: 0.25rem 0;
+}
+
+header h1 {
+    margin : 0;
+}
+
+/* Footer */
+footer {
+    font-size: smaller;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin-top: 0.5rem;
+}
+
+
 /* Typography */
+h1, h2, h3 {
+    line-height: 1.375;
+    font-family: Georgia, serif;
+}
+
 h1, h2 {
     margin-top: 1rem;
     margin-bottom: 0;
@@ -95,26 +128,6 @@ h1, h2 {
     margin-top: 0.5rem;
 }
 
-h1, h2, h3 {
-    line-height: 1.375;
-    font-family: Georgia, serif;
-}
-
-.tagline {
-    margin: 0.25rem 0;
-}
-
-hr {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Header */
-
-header h1 {
-    margin : 0;
-}
-
 /* Navigation */
 
 nav ul {
@@ -132,27 +145,6 @@ nav a {
     text-decoration: none;
 }
 
-.clicky-card.current {
-    border: 2px solid var(--color-primary);
-    background: darkred;
-    background: var(--color-primary);
-    
-}
-
-.clicky-card.current a {
-    color: var(--color-background);
-
-}
-
-/* Footer */
-footer {
-    font-size: smaller;
-    margin-top: 2rem;
-}
-
-footer p {
-    margin-top: 0.5rem;
-}
 
 /* Code blocks */
 .cms-content pre {
@@ -192,6 +184,16 @@ footer p {
     gap: 1rem;
 }
 
+.post-blurb {
+    padding: 1rem;
+}
+
+.post-blurb .excerpt {
+    font-size: smaller;
+}
+
+
+/* Clicky card component */
 .clicky-card {
     position: relative;
     border-radius: 5px;
@@ -226,20 +228,18 @@ footer p {
 }
 
 .clicky-card:active {
-    transform: scale(0.99);
+    transform: scale(0.9);
 }
 
-.post-blurb {
-    padding: 1rem;
+.clicky-card.current {
+    border: 2px solid var(--color-primary);
+    background: darkred;
+    background: var(--color-primary);
+    
 }
 
-.post-blurb .excerpt {
-    font-size: smaller;
-}
-
-a:hover {
-    color: darkred;
-    color: var(--color-primary);
+.clicky-card.current a {
+    color: var(--color-background);
 }
 
 
@@ -282,25 +282,6 @@ a:hover {
 .tag-list a {
     padding: 0.5rem 1rem;
 }
-/* 
-.tag-list a,
-.clear-filter {
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border: 1px solid darkred;
-    border: 1px solid var(--color-primary);
-    color: black;
-    color: var(--color-primary);
-
-    border-radius: 999px;
-} */
-
-/* .tag-list a[aria-current] {
-    background: darkred;
-    background: var(--color-primary);
-    color: white;
-    color: var(--color-background);
-} */
 
 /* Music page */
 .albums-grid {
