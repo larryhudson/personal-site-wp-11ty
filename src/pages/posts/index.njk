@@ -3,6 +3,8 @@ layout: 'layouts/posts-page.njk'
 permalink: '/posts/index.html'
 ---
 {{wp.postsPage.content|safe}}
+{% set tags = wp.tags %}
+<p style="display: inline">Filter by tag:</p>
 {% include 'partials/tagsList.njk' %}
 {% set posts = wp.posts %}
 {% include 'partials/postsList.njk' %}

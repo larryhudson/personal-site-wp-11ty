@@ -11,6 +11,12 @@ async function getData() {
             slug
             title
             date
+            tags {
+              nodes {
+                slug
+                count
+              }
+            }
             excerpt
             featuredImage {
               node {

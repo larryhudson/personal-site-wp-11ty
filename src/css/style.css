@@ -135,8 +135,11 @@ nav ul {
     padding: 0;
 
     display: flex;
-    gap: 0.5rem;
     flex-wrap: wrap;
+}
+
+nav ul > * + * {
+    margin-left: 0.5rem;
 }
 
 nav a {
@@ -224,11 +227,11 @@ nav a {
     border-color: darkred;
     border-color: var(--color-primary);
 
-    transform: translateY(-0.25rem);
+    transform: scale(1.05);
 }
 
 .clicky-card:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .clicky-card.current {

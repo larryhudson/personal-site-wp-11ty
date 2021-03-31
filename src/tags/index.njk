@@ -9,6 +9,8 @@ title: {{tag.slug}}
 ---
 <h1>Writing</h1>
 {{wp.postsPage.content|safe}}
+{% set tags = wp.tags %}
+<p style="display: inline">Filter by tag:</p>
 {% include 'partials/tagsList.njk' %}
 {% set posts = tag.posts.nodes %}
 {% set postsHeading = 'Posts tagged with ' + tag.slug %}

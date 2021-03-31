@@ -12,7 +12,8 @@
 
 {% block content %}
 <h1 class="accent-underline">{{post.title}}</h1>
-<p><em>{{post.date|readableDate}}</em>
+<p><em>{{post.date|readableDate}}</em></p>
+
 <div class="cms-content">
 {{post.content|safe}}
 </div>
