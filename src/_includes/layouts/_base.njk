@@ -13,7 +13,7 @@
     <meta name="twitter:creator" content="@{{site.twitter}}">
     <meta name="twitter:url" content="{{site.baseURL}}{{page.url}}">
     <meta name="twitter:title" content="{% if currentPage.title %}{{currentPage.title}}{% else %}{{title}}{% endif %}">
-    <meta name="twitter:description" content="{% if currentPage %}{{currentPage.excerpt|striptags|truncate(196)}}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:description" content="{% if currentPage and currentPage.excerpt %}{{currentPage.excerpt|striptags|truncate(196)}}{% else %}{{ site.description }}{% endif %}">
 
     <!--Schema-->
     <link rel="author" href="{{site.baseURL}}">
