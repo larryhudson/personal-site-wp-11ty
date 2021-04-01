@@ -1,0 +1,25 @@
+---
+title: Reading list
+permalink: '/reading/index.html'
+layout: layouts/_base.njk
+---
+
+<h1>Reading list</h1>
+
+<p>This pages pulls data from my <a href="https://getpocket.com/">Pocket archive</a>. These are articles that I've enjoyed lately.</p>
+
+<h2 class="accent-underline">What I've been reading lately</h2>
+
+<ul class="albums-grid">
+    {% for article in pocketArticles %}
+    <li class="album article clicky-card">
+        {% if article.top_image_url %}
+            {% image article.top_image_url, "", [150, 300] %}
+        {% endif %}
+
+        <div>
+            <a href="{{article.resolved_url}}">{{article.resolved_title}}</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

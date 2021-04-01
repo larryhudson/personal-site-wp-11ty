@@ -337,6 +337,14 @@ picture img {
     flex: 1 1 100px;
 }
 
+.article picture {
+    flex: 1 0 200px;
+}
+
+.article div {
+    flex: 1 0 100px;
+}
+
 .album div {
     flex: 1 0 150px;
 }

@@ -8,6 +8,10 @@ module.exports = [
         url: '/posts/'
     },
     {
+        label: 'Reading',
+        url: '/reading/'
+    },
+    {
         label: 'Music',
         url: '/music/'
     }
