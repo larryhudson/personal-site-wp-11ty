@@ -49,7 +49,8 @@ async function getPocketRequestToken() {
           const articleIds = Object.keys(response.data.list)
           var articles = articleIds.map(id => response.data.list[id])
           articles = articles.map(article => {
-              if (article.domain_metadata?.name == 'YouTube') {
+
+              if (article.domain_metadata && article.domain_metadata.name == 'YouTube') {
                   const videoUrl = new URL(article.resolved_url)
                   const videoId = videoUrl.searchParams.get('v')
                   article.top_image_url = `http://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`
