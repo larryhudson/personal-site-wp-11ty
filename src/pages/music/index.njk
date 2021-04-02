@@ -14,9 +14,9 @@ layout: layouts/_base.njk
 
 <h2 class="accent-underline">My top albums for the last week</h2>
 
-<ul class="albums-grid">
+<ul class="grid-layout smaller">
     {% for album in musicPage.album %}
-    <li class="album clicky-card">
+    <li class="album clicky-card card-with-image">
         {% image album.imageUrl, "", [150, 300] %}
         <div>
             <em>

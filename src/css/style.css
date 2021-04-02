@@ -128,6 +128,10 @@ h1, h2 {
     margin-top: 0.5rem;
 }
 
+.smaller {
+    font-size: smaller;
+}
+
 /* Navigation */
 
 nav ul {
@@ -174,6 +178,31 @@ nav a {
     font-size: smaller;
 }
 
+picture img {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+ul[class] {
+    list-style: none;
+    padding: 0;
+}
+
+/* Grid layout */
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .grid-layout.articles {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Latest posts */
 .post-list {
     margin-top: 2rem;
@@ -182,9 +211,7 @@ nav a {
 .post-blurbs {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
 }
 
 .post-blurb {
@@ -228,6 +255,7 @@ nav a {
     border-color: var(--color-primary);
 
     transform: scale(1.05);
+    z-index: 2;
 }
 
 .clicky-card:active {
@@ -293,7 +321,7 @@ nav a {
     display: flex;
     flex-wrap: wrap;
     padding: 0 0.5rem;
-    margin: -1rem;
+    margin: -0.5rem;
     margin-top: 0;
     margin-bottom: 2rem;
 }
@@ -308,52 +336,30 @@ nav a {
     padding: 0.25rem 0.5rem;
 }
 
-/* Music page */
-.albums-grid {
-    list-style: none;
-    padding: 0;
 
-    font-size: smaller;
+/* Card with image where the image is sometimes on the left hand side, otherwise it's above the text */
+/* Combines with .clicky-card */
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-
-picture img {
-    height: 100%;
-    width: 100%;
-    display: block;
-}
-
-.album {
+.card-with-image {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.album picture {
+.card-with-image picture {
     flex: 1 1 100px;
 }
 
-.article picture {
-    flex: 1 0 200px;
-}
-
-.article div {
-    flex: 1 0 100px;
-}
-
-.album div {
+.card-with-image div {
     flex: 1 0 150px;
+    padding: 0.25rem 0.5rem;
 }
 
-.album div {
-    padding: 0.25rem 0.5rem
+.card-with-image.article picture {
+    flex: 1 1 100px;
 }
 
-.album img {
-    width: 100%;
-    height: auto;
+.card-with-image.article div {
+    flex: 1 1 300px;
+    padding: 1rem;
 }

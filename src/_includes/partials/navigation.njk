@@ -1,4 +1,4 @@
-<nav>
+<nav class="smaller">
     <ul>
         {% for navItem in navItems %}
         <li class="clicky-card{% if page.url == navItem.url %} current{% endif %}"><a href="{{navItem.url}}" {% if page.url == navItem.url %}aria-current="page"{% endif %}>{{navItem.label}}</a></li>

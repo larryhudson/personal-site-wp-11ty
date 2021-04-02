@@ -21,6 +21,17 @@ module.exports = function(eleventyConfig) {
 
       return myDate.toFormat('d LLLL y');
     });
+
+    eleventyConfig.addFilter('dateFromSeconds', dateObj => {
+
+      var myDate = DateTime.fromSeconds(parseInt(dateObj), {
+        zone: 'Australia/Melbourne'
+      });
+
+      return myDate.toFormat('d LLLL y');
+    });
+
+
     eleventyConfig.addFilter('htmlDate', dateObj => {
       return DateTime.fromJSDate(dateObj, {
         zone: 'utc'

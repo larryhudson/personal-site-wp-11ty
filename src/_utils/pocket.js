@@ -54,6 +54,8 @@ async function getPocketRequestToken() {
                   const videoUrl = new URL(article.resolved_url)
                   const videoId = videoUrl.searchParams.get('v')
                   article.top_image_url = `http://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`
+                //   Todo: use YouTube oembed API to fetch data about YouTube video
+                // https://stackoverflow.com/questions/10896233/how-can-i-retrieve-youtube-video-details-from-video-url-using-php
               }
               return article
           })

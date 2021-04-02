@@ -6,19 +6,21 @@ layout: layouts/_base.njk
 
 <h1>Reading list</h1>
 
-<p>This pages pulls data from my <a href="https://getpocket.com/">Pocket archive</a>. These are articles that I've enjoyed lately.</p>
+<p>This pages pulls data from my <a href="https://getpocket.com/">Pocket archive</a>. These are articles and videos that I've enjoyed lately.</p>
 
 <h2 class="accent-underline">What I've been reading lately</h2>
 
-<ul class="albums-grid">
+<ul class="grid-layout articles smaller">
     {% for article in pocketArticles %}
-    <li class="album article clicky-card">
+    <li class="article clicky-card card-with-image">
         {% if article.top_image_url %}
             {% image article.top_image_url, "", [150, 300] %}
         {% endif %}
-
         <div>
-            <a href="{{article.resolved_url}}">{{article.resolved_title}}</a>
+            <h3>
+                <a href="{{article.resolved_url}}">{{article.resolved_title}}</a>
+            </h3>
+            <p>Read on {{article.time_favorited|dateFromSeconds}}</p>
         </div>
     </li>
     {% endfor %}
