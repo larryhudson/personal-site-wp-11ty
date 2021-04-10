@@ -47,7 +47,8 @@ async function getPocketRequestToken() {
 
       if (response.status == 200) {
           const articleIds = Object.keys(response.data.list)
-          var articles = articleIds.map(id => response.data.list[id])
+          var articles = articleIds.map(id => response.data.list[id]).sort((a, b) => parseInt(b.time_favorited) - parseInt(a.time_favorited))
+          console.log(articles)
           articles = articles.map(article => {
 
               if (article.domain_metadata && article.domain_metadata.name == 'YouTube') {
@@ -57,6 +58,10 @@ async function getPocketRequestToken() {
                 //   Todo: use YouTube oembed API to fetch data about YouTube video
                 // https://stackoverflow.com/questions/10896233/how-can-i-retrieve-youtube-video-details-from-video-url-using-php
               }
+
+              // Add website by splitting up the URL and removing www. if needed   
+              article.website = article.resolved_url.split('/')[2]
+              article.website = article.website.startsWith('www.') ? article.website.slice(4) : article.website
               return article
           })
           return articles

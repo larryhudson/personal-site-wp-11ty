@@ -363,3 +363,12 @@ ul[class] {
     flex: 1 1 300px;
     padding: 1rem;
 }
+
+/* Bring website closer to the heading */
+.card-with-image.article h3 {
+    margin-bottom: 0.5rem;
+}
+
+.card-with-image.article .website {
+    margin-top: 0;
+}

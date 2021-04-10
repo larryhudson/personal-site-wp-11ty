@@ -1,3 +1,1 @@
-const getPocketArticles = require('../_utils/pocket')
-
-module.exports = getPocketArticles
+module.exports = require('../_utils/pocket')
