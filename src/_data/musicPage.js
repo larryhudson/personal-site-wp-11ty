@@ -1,1 +1,1 @@
-module.exports = require('../_utils/lastfm');
+//module.exports = require('../_utils/lastfm');
